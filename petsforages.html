@@ -1,0 +1,66 @@
+<html>
+<head>
+  <link rel = "stylesheet" href = "petsforagesStyle.css">
+<script>
+var x;
+function printYes()
+{
+document.getElementById('message').innerHTML = "Yes, that is not a good pet for a " + x + " year old.";
+}
+function printNo()
+{
+document.getElementById('message').innerHTML = "No, that is not a good pet for a " + x + " year old.";
+}
+
+function age()
+{
+  x = document.getElementById("year").value;
+  var currentYear = 2021;
+  x = parseInt(x);
+  // y = parseInt(y);
+  x = currentYear - x;
+  if (x <= 10)
+  {
+    document.getElementById("age").innerHTML = "You are " + x + " years old, here are some pets";
+    document.getElementById('pic1').innerHTML = "<img src = 'pet1.webp' onclick='printYes()'>";
+    document.getElementById('pic2').innerHTML = "<img src = 'pet2.jpg' onclick='printYes()'>";
+    document.getElementById('pic3').innerHTML = "<img src = 'pet3.jpg' onclick='printNo()'>";
+
+  }
+  else if (x > 10)
+  {
+    document.getElementById("age").innerHTML = "You are " + x + " years old, here are some pets";
+    document.getElementById('pic4').innerHTML = "<img src = 'pet4.jpg' onclick='printYes()'>";
+    document.getElementById('pic5').innerHTML = "<img src = 'pet5.jpg' onclick='printYes()'>";
+    document.getElementById('pic6').innerHTML = "<img src = 'pet6.jpg' onclick='printYes()'>";
+  }
+  else if (x >= 200)
+  {
+    document.getElementById("age").innerHTML = "You are " + x + " years old, ERROR";
+  }
+  else if (x <= 0)
+  {
+    document.getElementById("age").innerHTML = "You are " + x + " years old, ERROR";
+  }
+}
+</script>
+</head>
+<body>
+  <center>
+  <input type = "text" placeholder="Year born" id = "button">
+  <input type = "button" value = "Go" id = "button" onclick = "age()">
+
+
+
+  <p id = "age"></p>
+  <p id = "message"></p>
+  <p id = "pic1"> </p>
+  <p id = "pic2"></p>
+  <p id = "pic3"></p>
+  <p id = "pic4"> </p>
+  <p id = "pic5"></p>
+  <p id = "pic6"></p>
+
+</center>
+</body>
+</html>
